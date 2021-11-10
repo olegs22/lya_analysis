@@ -150,7 +150,7 @@ def Pk2XiR(k,pk2d,rp,rt) :
     # mu=0, q=1 , and I need to multiply the result by r**(-2)
     junk,pkxi=HankelTransform(k=k,a=pk2d,q=1,mu=0,transformed_axis=1,output_r=rt,output_r_power=-2)
 
-
+    """
     if 1 :  # to avoid aliasing
         a=np.log(k[1]/k[0])
         nk=k.size
@@ -158,7 +158,7 @@ def Pk2XiR(k,pk2d,rp,rt) :
         tmp=np.zeros(shape=(k.size,pkxi.shape[1]),dtype=pkxi.dtype)
         tmp[:pkxi.shape[0]]=pkxi
         pkxi=tmp
-    
+    """
 
     # pk dk cos(k*r) = int pk dk J_{mu=-1/2}(k*r) * (kr)**(1/2) (pi/2)**(1/2)
     # mu=-1/2, q=1/2 , and I need to multiply the result by r**(-1) * (pi/2)**(1/2)
